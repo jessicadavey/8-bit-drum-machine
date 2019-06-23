@@ -7,12 +7,103 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style type="text/css">
+        .pad {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            background-color: #3B748C;
+            margin: 2px auto;
+        }
 
+        .on {
+            background-color: #6CD4FF;
+        }
+
+        .panel {
+            background-color: #CFBFF7;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 65px;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        .panel-select {
+            background-color: #7BC950;
+        }
+
+        .container {
+            float: left;
+            background-color: #4381C1;
+            display: flex;
+            flex-direction: row;
+            width: 290px;
+            justify-content: space-evenly;
+        }
+
+        #play-stop {
+            float: right;
+            height: 60px;
+            width: 60px;
+            font-size: 30px;
+            background-color: #ffffff;
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin: 10px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="panel">
+            <button class="pad"></button>
+            <button class="pad"></button>
+        </div>
+        <div class="panel">
+            <button class="pad"></button>
+            <button class="pad"></button>
+        </div>
+        <div class="panel">
+            <button class="pad"></button>
+            <button class="pad"></button>
+        </div>
+        <div class="panel">
+            <button class="pad"></button>
+            <button class="pad"></button>
+        </div>
+    </div>
+
+    <button id="play-stop"><i class="fa fa-play"></i></button>
+
+
+    <script>
+        const buttons = document.querySelectorAll(".pad");
+        buttons.forEach(button => button.addEventListener("click", handlePad));
+
+        function handlePad() {
+            this.classList.toggle("on");
+        }
+
+        const playStop = document.querySelector("#play-stop");
+        playStop.addEventListener("click", handlePlay)
+
+        let isPlaying = false;
+
+        function handlePlay() {
+            isPlaying = !isPlaying;
+            console.log(isPlaying);
+            if (isPlaying)
+                playStop.innerHTML = `<i class="fa fa-stop"></i>`;
+            if (!isPlaying)
+                playStop.innerHTML = `<i class="fa fa-play"></i>`;
+
+        }
+    </script>
 
 </body>
 
