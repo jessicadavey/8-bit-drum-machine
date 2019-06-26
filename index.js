@@ -3,6 +3,8 @@ tomButtons.forEach(button => button.addEventListener("click", handleTom));
 
 function handleTom() {
     this.classList.toggle("tom-on");
+    tom.play();
+    tom.currentTime = 0;
 }
 
 const cowbellButtons = document.querySelectorAll(".cowbell");
@@ -10,16 +12,12 @@ cowbellButtons.forEach(button => button.addEventListener("click", handleCowbell)
 
 function handleCowbell() {
     this.classList.toggle("cowbell-on");
+    cowbell.play();
+    cowbell.currentTime = 0;
 }
-
 
 let tom = new Audio("assets/tom.wav");
 let cowbell = new Audio("assets/cowbell.wav");
-
-// let audioArray = [tom, cowbell, cowbell, tom];
-
-
-// console.log(audioArray);
 
 
 const playStop = document.querySelector("#play-stop");
