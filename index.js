@@ -14,7 +14,6 @@ let playInterval;
 
 function handlePlay() {
 
-
     if (isPlaying) {
         clearInterval(playInterval);
     }
