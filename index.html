@@ -48,7 +48,7 @@
         }
 
         #play-stop {
-            float: right;
+            float: left;
             height: 60px;
             width: 60px;
             font-size: 30px;
@@ -96,9 +96,30 @@
 
         let isPlaying = false;
 
+        let playInterval;
+
         function handlePlay() {
+
+
+            if (isPlaying) {
+                clearInterval(playInterval);
+            }
+
+            if (!isPlaying) {
+                playInterval = setInterval(selectPanel, 500);
+            }
+
             isPlaying = !isPlaying;
             updatePlayButton();
+        }
+
+        let i = 0;
+
+        function selectPanel() {
+            const panels = document.querySelectorAll(".panel");
+            panels.forEach(panel => panel.classList.remove("panel-select"));
+            panels[i % 4].classList.add("panel-select");
+            i++;
         }
 
         function updatePlayButton() {
