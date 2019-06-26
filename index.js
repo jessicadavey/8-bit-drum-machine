@@ -1,9 +1,26 @@
-const buttons = document.querySelectorAll(".pad");
-buttons.forEach(button => button.addEventListener("click", handlePad));
+const tomButtons = document.querySelectorAll(".tom");
+tomButtons.forEach(button => button.addEventListener("click", handleTom));
 
-function handlePad() {
-    this.classList.toggle("on");
+function handleTom() {
+    this.classList.toggle("tom-on");
 }
+
+const cowbellButtons = document.querySelectorAll(".cowbell");
+cowbellButtons.forEach(button => button.addEventListener("click", handleCowbell));
+
+function handleCowbell() {
+    this.classList.toggle("cowbell-on");
+}
+
+
+let tom = new Audio("assets/tom.wav");
+let cowbell = new Audio("assets/cowbell.wav");
+
+// let audioArray = [tom, cowbell, cowbell, tom];
+
+
+// console.log(audioArray);
+
 
 const playStop = document.querySelector("#play-stop");
 playStop.addEventListener("click", handlePlay)
@@ -11,28 +28,41 @@ playStop.addEventListener("click", handlePlay)
 let isPlaying = false;
 
 let playInterval;
+let i = 0;
 
 function handlePlay() {
+    let audioArray = [...tomButtons].map(button => {
+        return button.classList.contains("tom-on") ? tom : null;
+    })
 
     if (isPlaying) {
         clearInterval(playInterval);
     }
 
     if (!isPlaying) {
-        playInterval = setInterval(selectPanel, 500);
+        playInterval = setInterval(drumMachine, 500, audioArray);
     }
 
     isPlaying = !isPlaying;
+    i = 0;
     updatePlayButton();
 }
 
-let i = 0;
+
+
+
+function drumMachine(array) {
+    let currentSound = array[i % 4];
+    if (currentSound)
+        currentSound.play();
+    selectPanel();
+    i++;
+}
 
 function selectPanel() {
     const panels = document.querySelectorAll(".panel");
     panels.forEach(panel => panel.classList.remove("panel-select"));
     panels[i % 4].classList.add("panel-select");
-    i++;
 }
 
 function updatePlayButton() {
