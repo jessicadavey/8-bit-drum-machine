@@ -98,12 +98,14 @@
 
         function handlePlay() {
             isPlaying = !isPlaying;
-            console.log(isPlaying);
+            updatePlayButton();
+        }
+
+        function updatePlayButton() {
             if (isPlaying)
                 playStop.innerHTML = `<i class="fa fa-stop"></i>`;
             if (!isPlaying)
                 playStop.innerHTML = `<i class="fa fa-play"></i>`;
-
         }
     </script>
 
