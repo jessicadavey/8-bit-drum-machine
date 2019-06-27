@@ -25,8 +25,9 @@ const tempoSlider = document.querySelector("#tempo-slider");
 tempoSlider.addEventListener("input", updateTempo);
 
 function updateTempo() {
-    const tempo = document.querySelector("#bpm");
-    tempo.innerHTML = tempoSlider.value;
+    const bpm = document.querySelector("#bpm");
+    bpm.innerHTML = `${tempoSlider.value} bpm`;
+
 }
 // Sets up the play/stop button
 
@@ -40,13 +41,17 @@ let i = 0;
 
 function handlePlay() {
 
+    let tempoInMs = 1000 / (tempoSlider.value / 60)
+
     if (isPlaying) {
         clearInterval(playInterval);
         clearPanelHighlight();
+        tempoSlider.disabled = false;
     }
 
     if (!isPlaying) {
-        playInterval = setInterval(drumMachine, 500);
+        playInterval = setInterval(drumMachine, tempoInMs);
+        tempoSlider.disabled = true;
     }
 
     isPlaying = !isPlaying;
@@ -60,8 +65,11 @@ function drumMachine() {
     let drumSounds = makeDrumPattern();
 
     for (let j = 0; j < drumSounds.length; j++) {
-        if (drumSounds[j].hits[i % 4])
+        if (drumSounds[j].hits[i % 4]) {
             drumSounds[j].sound.play();
+            drumSounds[j].sound.currentTime = 0;
+        }
+
     }
 
     highlightPanel();
