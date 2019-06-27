@@ -1,35 +1,17 @@
-// const tomButtons = document.querySelectorAll(".tom button");
-// tomButtons.forEach(button => button.addEventListener("click", function () {
-//     this.classList.toggle("on");
-//     tom.play();
-//     tom.currentTime = 0;
-// }));
+let drumAudio = {
+    tom: new Audio("assets/tom.wav"),
+    cowbell: new Audio("assets/cowbell.wav")
+}
 
-// function handleTom() {
-//     this.classList.toggle("on");
-//     tom.play();
-//     tom.currentTime = 0;
-// }
+for (let key in drumAudio) {
+    const buttons = document.querySelectorAll(`.${key} button`);
+    buttons.forEach(button => button.addEventListener("click", function () {
+        this.classList.toggle("on");
+        drumAudio[key].play();
+        drumAudio[key].currentTime = 0;
+    }))
+}
 
-// const cowbellButtons = document.querySelectorAll(".cowbell button");
-// cowbellButtons.forEach(button => button.addEventListener("click", handleCowbell));
-
-// function handleCowbell() {
-//     this.classList.toggle("on");
-//     cowbell.play();
-//     cowbell.currentTime = 0;
-// }
-
-
-
-const buttons = document.querySelectorAll("span button");
-buttons.forEach(button => button.addEventListener("click", function () {
-    this.classList.toggle("on");
-}))
-
-
-let tom = new Audio("assets/tom.wav");
-let cowbell = new Audio("assets/cowbell.wav");
 
 
 const playStop = document.querySelector("#play-stop");
@@ -55,10 +37,7 @@ function handlePlay() {
     updatePlayButton();
 }
 
-let drumAudio = {
-    tom: tom,
-    cowbell: cowbell
-}
+
 
 
 function makeDrumPattern() {
@@ -67,7 +46,7 @@ function makeDrumPattern() {
     for (let key in drumAudio) {
         let arr = [...document.querySelectorAll(`.${key} button`)]
             .map(button => button.classList.contains("on"));
-        anotherArray.push({
+        pattern.push({
             sound: drumAudio[key],
             hits: arr
         });
