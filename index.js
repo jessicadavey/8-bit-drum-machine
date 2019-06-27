@@ -19,6 +19,15 @@ for (let key in drumAudio) {
     }))
 }
 
+// Tempo
+
+const tempoSlider = document.querySelector("#tempo-slider");
+tempoSlider.addEventListener("input", updateTempo);
+
+function updateTempo() {
+    const tempo = document.querySelector("#bpm");
+    tempo.innerHTML = tempoSlider.value;
+}
 // Sets up the play/stop button
 
 const playStop = document.querySelector("#play-stop");
