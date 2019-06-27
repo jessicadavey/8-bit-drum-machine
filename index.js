@@ -28,17 +28,17 @@ let isPlaying = false;
 let playInterval;
 let i = 0;
 
+
+
 function handlePlay() {
-    let audioArray = [...tomButtons].map(button => {
-        return button.classList.contains("tom-on") ? tom : null;
-    })
+
 
     if (isPlaying) {
         clearInterval(playInterval);
     }
 
     if (!isPlaying) {
-        playInterval = setInterval(drumMachine, 500, audioArray);
+        playInterval = setInterval(drumMachine, 500);
     }
 
     isPlaying = !isPlaying;
@@ -49,10 +49,34 @@ function handlePlay() {
 
 
 
-function drumMachine(array) {
-    let currentSound = array[i % 4];
-    if (currentSound)
-        currentSound.play();
+
+function drumMachine() {
+
+    let tomArray = [...tomButtons].map(button => {
+        return button.classList.contains("tom-on") ? tom : null;
+    })
+
+    let cowbellArray = [...cowbellButtons].map(button => {
+        return button.classList.contains("cowbell-on") ? cowbell : null;
+    })
+
+    let audioArray = [
+        [],
+        [],
+        [],
+        []
+    ]
+
+    for (let i = 0; i < audioArray.length; i++) {
+        audioArray[i] = [tomArray[i], cowbellArray[i]];
+    }
+
+
+
+    let currentSoundArray = audioArray[i % 4];
+
+    for (let sound of currentSoundArray)
+        if (sound) sound.play();
     selectPanel();
     i++;
 }
