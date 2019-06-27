@@ -1,0 +1,49 @@
+.pad {
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: 2px auto;
+}
+
+.tom>.on {
+    background-color: #6CD4FF;
+}
+
+.cowbell>.on {
+    background-color: #FFA5AB;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 65px;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.panel-select {
+    background-color: #CFBFF7;
+}
+
+.container {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    border: 1px solid gray;
+    justify-content: space-evenly;
+}
+
+#play-stop {
+    float: left;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+}
