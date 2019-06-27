@@ -33,7 +33,7 @@ function handlePlay() {
 
     if (isPlaying) {
         clearInterval(playInterval);
-        clearPanelSelect();
+        clearPanelHighlight();
     }
 
     if (!isPlaying) {
@@ -55,7 +55,7 @@ function drumMachine() {
             drumSounds[j].sound.play();
     }
 
-    selectPanel();
+    highlightPanel();
     i++;
 }
 
@@ -75,13 +75,13 @@ function makeDrumPattern() {
 }
 const panels = document.querySelectorAll(".panel");
 
-function selectPanel() {
-    clearPanelSelect();
-    panels[i % 4].classList.add("panel-select");
+function highlightPanel() {
+    clearPanelHighlight();
+    panels[i % 4].classList.add("panel-highlight");
 }
 
-function clearPanelSelect() {
-    panels.forEach(panel => panel.classList.remove("panel-select"));
+function clearPanelHighlight() {
+    panels.forEach(panel => panel.classList.remove("panel-highlight"));
 }
 
 function updatePlayButton() {
