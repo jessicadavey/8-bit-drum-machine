@@ -1,17 +1,18 @@
-const tomButtons = document.querySelectorAll(".tom");
+const tomButtons = document.querySelectorAll(".tom button");
+console.log(tomButtons);
 tomButtons.forEach(button => button.addEventListener("click", handleTom));
 
 function handleTom() {
-    this.classList.toggle("tom-on");
+    this.classList.toggle("on");
     tom.play();
     tom.currentTime = 0;
 }
 
-const cowbellButtons = document.querySelectorAll(".cowbell");
+const cowbellButtons = document.querySelectorAll(".cowbell button");
 cowbellButtons.forEach(button => button.addEventListener("click", handleCowbell));
 
 function handleCowbell() {
-    this.classList.toggle("cowbell-on");
+    this.classList.toggle("on");
     cowbell.play();
     cowbell.currentTime = 0;
 }
@@ -32,7 +33,6 @@ let i = 0;
 
 function handlePlay() {
 
-
     if (isPlaying) {
         clearInterval(playInterval);
     }
@@ -49,11 +49,11 @@ function handlePlay() {
 
 function makeDrumPattern() {
     let tomArray = [...tomButtons].map(button => {
-        return button.classList.contains("tom-on") ? tom : null;
+        return button.classList.contains("on") ? tom : null;
     })
 
     let cowbellArray = [...cowbellButtons].map(button => {
-        return button.classList.contains("cowbell-on") ? cowbell : null;
+        return button.classList.contains("on") ? cowbell : null;
     })
 
     let audioArray = [
