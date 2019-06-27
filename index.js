@@ -47,11 +47,7 @@ function handlePlay() {
 }
 
 
-
-
-
-function drumMachine() {
-
+function makeDrumPattern() {
     let tomArray = [...tomButtons].map(button => {
         return button.classList.contains("tom-on") ? tom : null;
     })
@@ -70,8 +66,12 @@ function drumMachine() {
     for (let i = 0; i < audioArray.length; i++) {
         audioArray[i] = [tomArray[i], cowbellArray[i]];
     }
+    return audioArray;
+}
 
 
+function drumMachine() {
+    let audioArray = makeDrumPattern();
 
     let currentSoundArray = audioArray[i % 4];
 
