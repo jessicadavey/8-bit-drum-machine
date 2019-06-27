@@ -1,18 +1,25 @@
+// Create an object containing all the audio files currently used in the drum machine:
+
 let drumAudio = {
     tom: new Audio("assets/tom.wav"),
     cowbell: new Audio("assets/cowbell.wav")
 }
 
+// Assign event listeners to toggle the buttons to change color 
+// and play the appropriate sound when clicked (if not running):
+
 for (let key in drumAudio) {
     const buttons = document.querySelectorAll(`.${key} button`);
     buttons.forEach(button => button.addEventListener("click", function () {
         this.classList.toggle("on");
-        drumAudio[key].play();
-        drumAudio[key].currentTime = 0;
+        if (!isPlaying) {
+            drumAudio[key].play();
+            drumAudio[key].currentTime = 0;
+        }
     }))
 }
 
-
+// Sets up the play/stop button
 
 const playStop = document.querySelector("#play-stop");
 playStop.addEventListener("click", handlePlay)
@@ -37,9 +44,6 @@ function handlePlay() {
     updatePlayButton();
 }
 
-
-
-
 function makeDrumPattern() {
     let pattern = [];
 
@@ -54,6 +58,8 @@ function makeDrumPattern() {
     }
     return pattern;
 }
+
+// This function runs the drum machine when the play button is pressed:
 
 function drumMachine() {
     let drumSounds = makeDrumPattern();
