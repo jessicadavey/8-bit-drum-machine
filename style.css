@@ -24,6 +24,14 @@
     margin: 5px 0;
 }
 
+#headers {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 5px 0;
+}
+
 .panel-select {
     background-color: #CFBFF7;
 }
@@ -32,7 +40,7 @@
     float: left;
     display: flex;
     flex-direction: row;
-    width: 290px;
+    width: 350px;
     border: 1px solid gray;
     justify-content: space-evenly;
 }

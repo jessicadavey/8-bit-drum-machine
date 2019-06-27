@@ -33,6 +33,7 @@ function handlePlay() {
 
     if (isPlaying) {
         clearInterval(playInterval);
+        clearPanelSelect();
     }
 
     if (!isPlaying) {
@@ -42,21 +43,6 @@ function handlePlay() {
     isPlaying = !isPlaying;
     i = 0;
     updatePlayButton();
-}
-
-function makeDrumPattern() {
-    let pattern = [];
-
-    for (let key in drumAudio) {
-        let arr = [...document.querySelectorAll(`.${key} button`)]
-            .map(button => button.classList.contains("on"));
-        pattern.push({
-            sound: drumAudio[key],
-            hits: arr
-        });
-
-    }
-    return pattern;
 }
 
 // This function runs the drum machine when the play button is pressed:
@@ -73,10 +59,29 @@ function drumMachine() {
     i++;
 }
 
+function makeDrumPattern() {
+    let pattern = [];
+
+    for (let key in drumAudio) {
+        let arr = [...document.querySelectorAll(`.${key} button`)]
+            .map(button => button.classList.contains("on"));
+        pattern.push({
+            sound: drumAudio[key],
+            hits: arr
+        });
+
+    }
+    return pattern;
+}
+const panels = document.querySelectorAll(".panel");
+
 function selectPanel() {
-    const panels = document.querySelectorAll(".panel");
-    panels.forEach(panel => panel.classList.remove("panel-select"));
+    clearPanelSelect();
     panels[i % 4].classList.add("panel-select");
+}
+
+function clearPanelSelect() {
+    panels.forEach(panel => panel.classList.remove("panel-select"));
 }
 
 function updatePlayButton() {
