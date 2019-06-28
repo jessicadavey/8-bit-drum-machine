@@ -7,6 +7,18 @@
 
 }
 
+.kick>.on {
+    background-color: #FFA5AB;
+}
+
+.clap>.on {
+    background-color: #FFA5AB;
+}
+
+.closedhh>.on {
+    background-color: #FFA5AB;
+}
+
 .tom>.on {
     background-color: #6CD4FF;
 }
@@ -14,6 +26,20 @@
 .cowbell>.on {
     background-color: #FFA5AB;
 }
+
+.openhh>.on {
+    background-color: #FFA5AB;
+}
+
+.snare>.on {
+    background-color: #FFA5AB;
+}
+
+.tamb>.on {
+    background-color: #FFA5AB;
+}
+
+
 
 .panel {
     display: flex;
@@ -40,9 +66,9 @@
 
 .container {
     display: grid;
-    grid-template-columns: 70px 160px 160px 160px 160px;
+    grid-template-columns: 110px 160px 160px 160px 160px;
     border: 1px solid gray;
-    width: 710px;
+    width: 750px;
 }
 
 .bar {
