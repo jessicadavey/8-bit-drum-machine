@@ -1,4 +1,5 @@
 let numberOfBeats = 16;
+let beatsPerBar = 4;
 
 // Create an object containing all the audio files currently used in the drum machine:
 
@@ -43,7 +44,7 @@ let i = 0;
 
 function handlePlay() {
 
-    let tempoInMs = 1000 / (tempoSlider.value / 60)
+    let tempoInMs = (1000 / (tempoSlider.value / 60)) / beatsPerBar;
 
     if (isPlaying) {
         clearInterval(playInterval);
