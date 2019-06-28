@@ -1,3 +1,5 @@
+let numberOfBeats = 16;
+
 // Create an object containing all the audio files currently used in the drum machine:
 
 let drumAudio = {
@@ -65,7 +67,7 @@ function drumMachine() {
     let drumSounds = makeDrumPattern();
 
     for (let j = 0; j < drumSounds.length; j++) {
-        if (drumSounds[j].hits[i % 4]) {
+        if (drumSounds[j].hits[i % numberOfBeats]) {
             drumSounds[j].sound.play();
             drumSounds[j].sound.currentTime = 0;
         }
@@ -94,7 +96,7 @@ const panels = document.querySelectorAll(".panel");
 
 function highlightPanel() {
     clearPanelHighlight();
-    panels[i % 4].classList.add("panel-highlight");
+    panels[i % numberOfBeats].classList.add("panel-highlight");
 }
 
 function clearPanelHighlight() {
