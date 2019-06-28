@@ -1,10 +1,10 @@
 .pad {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #ffffff;
-    margin: 2px auto;
+
 }
 
 .tom>.on {
@@ -18,18 +18,20 @@
 .panel {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    width: 65px;
-    padding: 8px;
-    margin: 5px 0;
+    padding: 5px;
 }
 
 #headers {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    padding: 8px;
-    margin: 5px 0;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+#headers>div {
+    height: 25px;
+    text-align: right;
+    padding-right: 8px;
 }
 
 .panel-highlight {
@@ -37,9 +39,16 @@
 }
 
 .container {
+    display: grid;
+    grid-template-columns: 70px 160px 160px 160px 160px;
+    border: 1px solid gray;
+    width: 710px;
+}
+
+.bar {
     display: flex;
     flex-direction: row;
-    border: 1px solid gray;
+    border-left: 1px solid gray;
     justify-content: space-evenly;
 }
 
@@ -51,10 +60,6 @@
     border: 1px solid gray;
     border-radius: 10px;
     margin: 10px;
-}
-
-.clear-float {
-    clear: both;
 }
 
 #tempo-slider {
