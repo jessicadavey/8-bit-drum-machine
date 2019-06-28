@@ -39,7 +39,6 @@
 .container {
     display: flex;
     flex-direction: row;
-    width: 350px;
     border: 1px solid gray;
     justify-content: space-evenly;
 }
