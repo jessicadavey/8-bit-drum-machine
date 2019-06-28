@@ -4,8 +4,14 @@ let beatsPerBar = 4;
 // Create an object containing all the audio files currently used in the drum machine:
 
 let drumAudio = {
+    kick: new Audio("assets/kick.wav"),
+    clap: new Audio("assets/clap.wav"),
+    closedhh: new Audio("assets/closedhh.wav"),
     tom: new Audio("assets/tom.wav"),
-    cowbell: new Audio("assets/cowbell.wav")
+    cowbell: new Audio("assets/cowbell.wav"),
+    openhh: new Audio("assets/openhh.wav"),
+    snare: new Audio("assets/snare.wav"),
+    tamb: new Audio("assets/tamb.wav"),
 }
 
 // Assign event listeners to toggle the buttons to change color 
