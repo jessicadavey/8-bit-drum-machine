@@ -1,5 +1,7 @@
 ## Drum Programmer
 
+Screenshot goes here
+
 8-bit sound drum machine in the style of the 808, etc, (link) made using vanilla JavaScript and CSS.
 
 Play and stop icons from Font Awesome (link).
