@@ -1,3 +1,10 @@
+h1 {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    color: gray;
+    font-size: 48px;
+}
+
 .pad {
     width: 25px;
     height: 25px;
@@ -38,8 +45,6 @@
 .tamb>.on {
     background-color: #8c19ff;
 }
-
-
 
 .panel {
     display: flex;
