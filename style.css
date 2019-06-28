@@ -74,6 +74,7 @@ h1 {
     grid-template-columns: 110px 160px 160px 160px 160px;
     border: 1px solid gray;
     width: 750px;
+    margin: auto;
 }
 
 .bar {
@@ -87,16 +88,22 @@ h1 {
     height: 60px;
     width: 60px;
     font-size: 30px;
-    background-color: #ffffff;
+    background-color: gray;
     border: 1px solid gray;
     border-radius: 10px;
-    margin: 10px;
+    display: block;
+    margin: 10px auto;
 }
 
 #tempo-slider {
     padding: 10px;
+    margin: auto;
+    display: block;
 }
 
 #tempo-controls {
-    margin: 20px;
+    width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid gray;
 }
