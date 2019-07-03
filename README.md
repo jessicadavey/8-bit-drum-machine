@@ -15,5 +15,5 @@ Layout accomplished with CSS grid.
 
 Through this project, I learned how to use the following:
 - setInterval
-- audio api
+- working with audio
 - how to format links with Markdown
