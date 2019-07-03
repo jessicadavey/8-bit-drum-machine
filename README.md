@@ -1,15 +1,18 @@
-## Drum Programmer
+## 8-Bit Drum Machine
 
-Screenshot goes here
+[Drum machine](https://en.wikipedia.org/wiki/Drum_machine "Drum Machine - Wikipedia") using 8-bit sounds, made with vanilla JavaScript and CSS.
 
-8-bit sound drum machine in the style of the 808, etc, (link) made using vanilla JavaScript and CSS.
+------
 
-Play and stop icons from Font Awesome (link).
+Instructions: Use the buttons to create a pattern, then press play to hear it in action.  Change the tempo using the slider (disabled while playing).
 
-8-bit samples are Bitkits from Uppercussion.   [https://www.uppercussion.com/products/bitkits]
+Play and stop icons are from [Font Awesome](https://fontawesome.com/ "Font Awesome").
+
+8-bit samples are Bitkits from [Uppercussion](https://www.uppercussion.com/products/bitkits "Uppercussion").
 
 Layout accomplished with CSS grid.
 
-Things I learned: 
--setInterval
--audio api
+Through this project, I learned how to use the following:
+- setInterval
+- audio api
+- how to format links with Markdown

@@ -1,9 +1,17 @@
-h1 {
+body {
+    font-family: monospace;
+}
+
+header {
     text-align: center;
     font-family: 'Roboto Slab', serif;
     color: gray;
+}
+
+header h1 {
     font-size: 48px;
 }
+
 
 .pad {
     width: 25px;
@@ -71,9 +79,9 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: 110px 160px 160px 160px 160px;
+    grid-template-columns: 115px 160px 160px 160px 160px;
     border: 1px solid gray;
-    width: 750px;
+    width: 755px;
     margin: auto;
 }
 
@@ -88,7 +96,8 @@ h1 {
     height: 60px;
     width: 60px;
     font-size: 30px;
-    background-color: gray;
+    background-color: white;
+    color: gray;
     border: 1px solid gray;
     border-radius: 10px;
     display: block;
@@ -106,4 +115,9 @@ h1 {
     margin: 20px auto;
     text-align: center;
     border: 1px solid gray;
+}
+
+footer {
+    width: 90%;
+    margin: auto;
 }

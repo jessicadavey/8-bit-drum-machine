@@ -112,7 +112,7 @@ function clearPanelHighlight() {
 
 function updatePlayButton() {
     if (isPlaying)
-        playStop.innerHTML = `<i class="fa fa-stop"></i>`;
+        playStop.innerHTML = `<i class="fas fa-stop"></i>`;
     if (!isPlaying)
-        playStop.innerHTML = `<i class="fa fa-play"></i>`;
+        playStop.innerHTML = `<i class="fas fa-play"></i>`;
 }
