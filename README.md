@@ -1,4 +1,5 @@
 ## 8-Bit Drum Machine
+![screenshot](assets/screenshot.png)
 
 [Drum machine](https://en.wikipedia.org/wiki/Drum_machine "Drum Machine - Wikipedia") using 8-bit sounds, made with vanilla JavaScript and CSS.
 
